@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Cursos\aluraJavaSpringBoot\screenmatch"/>
 			<item value="C:\Cursos\aluraJavaSpringBoot\contador"/>
 			<item value="C:\Cursos\aluraJava\screenmatch"/>
 		</list>

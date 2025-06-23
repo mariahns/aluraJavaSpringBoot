@@ -13,7 +13,7 @@ public class ConsumoApi {
 		HttpRequest request = HttpRequest.newBuilder().uri(URI.create(endereco)).build();
 		HttpResponse<String> response = null;
 		try {
-			response = client.send(request, HttpResponse.BodyHandlers.ofString());
+			response = client.send(request, HttpResponse.BodyHandlers.ofString());			
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		} catch (InterruptedException e) {
@@ -21,6 +21,7 @@ public class ConsumoApi {
 		}
 
 		String json = response.body();
+		//System.out.println(json);
 		return json;
 	}
 
