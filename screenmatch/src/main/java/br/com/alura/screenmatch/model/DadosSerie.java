@@ -15,6 +15,7 @@ public record DadosSerie(@JsonAlias("Title") String titulo,
 					     @JsonAlias("Genre") String genero,
 						 @JsonAlias("Plot") String sinopse,
 						 //@JsonAlias("Actors") @JsonDeserialize(using = Deserializer.class) List<String> atores
-						 @JsonAlias("Actors") String atores){
+						 @JsonAlias("Actors") String atores,
+						 @JsonAlias("Poster") String poster){
 
 }

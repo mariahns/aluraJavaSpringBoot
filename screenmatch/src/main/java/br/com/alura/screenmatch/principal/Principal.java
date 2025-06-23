@@ -1,13 +1,16 @@
 
 package br.com.alura.screenmatch.principal;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 import br.com.alura.screenmatch.model.DadosSerie;
 import br.com.alura.screenmatch.service.ConsumoApi;
 import br.com.alura.screenmatch.service.ConverteDados;
 import br.com.alura.screenmatch.model.DadosTemporada;
+import br.com.alura.screenmatch.model.Serie;
 
 public class Principal {
 
@@ -82,6 +85,17 @@ public class Principal {
     }
     
     private void listarSeriesBuscadas(){
-    	dadosSeries.forEach(System.out::println);
-    }
+    	
+    	List<Serie> series = new ArrayList<>();
+    	series = dadosSeries.stream()
+    			.map(d -> new Serie(d)) //para cada dadoSerie cria um novo obj de Serie
+    			.collect(Collectors.toList()); //coleta para uma lista e atribui o resultado em series
+    	
+    	
+    	series.stream()
+    		.sorted(Comparator.comparing(Serie::getGenero)) //ordenar pela categoria passando um comparator 
+    		.forEach(System.out::println); //imprime 
+    	}   
+ 
+    
 }
